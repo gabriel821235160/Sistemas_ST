@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-//'src/app/model/medico/medico';
+import { catchError, Observable, of } from 'rxjs';
+import { Login } from 'src/app/model/login/login';
+import { LoginService } from 'src/app/services/loginService/loginService.services';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,33 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  login$!: Observable<Login[]>;
 
-  cpf=''
-  senha=''
-
- constructor(private HttpClient: HttpClient) { }
-  
- 
- connectionLogin(){
-    return this.HttpClient.post('http://localhost:7000/logar',
-    {cpf: this.cpf, senha: this.senha})
-    .pipe(
-      (res) => {
-        console.log ("retorno", res)
-        return res
-      },
-      (err) =>{
-        console.log ("erro", err)
-        return err
-      } 
+  constructor(private serviceLogin: LoginService ) {
+    this.serviceLogin.listaDeMedicos().pipe(
+      catchError((err) =>{
+        console.log(err);
+        return of([]);
+      })
     )
-  }
+   }
   
-  jose(){
-    console.log("estou por aqui")
-  }
 
   ngOnInit(): void {
+
   }
+  
+  //lista(){
+  //  const jose = this.medicos$.subscribe(
+  //    (res) => console.log(res)
+  //  )
+  //  console.log(jose);
+  //}
+
+
 
 }
