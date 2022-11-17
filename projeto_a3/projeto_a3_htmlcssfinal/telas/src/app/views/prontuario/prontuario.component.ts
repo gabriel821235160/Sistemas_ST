@@ -13,3 +13,5 @@ export class ProntuarioComponent implements OnInit {
   }
 
 }
+
+export class MenuOverviewExample {}

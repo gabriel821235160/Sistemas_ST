@@ -18,13 +18,17 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
-
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatMenu, MatMenuModule} from '@angular/material/menu';
 
 import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { InicialComponent } from './views/inicial/inicial.component';
 import { ListagemComponent } from './views/listagem/listagem.component';
 import { ProntuarioComponent } from './views/prontuario/prontuario.component';
+import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.component';
+import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
+import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
+
 
 
 @NgModule({
@@ -36,6 +40,9 @@ import { ProntuarioComponent } from './views/prontuario/prontuario.component';
     InicialComponent,
     ListagemComponent,
     ProntuarioComponent,
+    CadastrofuncComponent,
+    CadastromedComponent,
+    CadastropacComponent,
   ],
 
   imports: [
@@ -52,7 +59,9 @@ import { ProntuarioComponent } from './views/prontuario/prontuario.component';
     HttpClientModule,
     MatSidenavModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatMenuModule
   ],
 
   providers: [],

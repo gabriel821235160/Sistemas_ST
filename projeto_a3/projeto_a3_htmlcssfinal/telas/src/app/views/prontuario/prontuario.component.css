@@ -3,7 +3,7 @@
     src: url(./Sen/Sen-Regular.ttf);   
 }
 
-#card1{
+#card{
     background-color: #004E64;
     position: absolute;
     width: 10%;
@@ -25,6 +25,7 @@
 #inicio:hover{
     background-color: white;
     color: #004E64;
+    font-weight: bold;
 }
 
 #linha1{
@@ -47,6 +48,7 @@
 #listagem:hover{
     background-color: white;
     color: #004E64;
+    font-weight: bold;
 }
 
 #prontuario{
@@ -59,7 +61,88 @@
     width: 90%;
     left: 4%;
     cursor: pointer;
+    font-weight: bold;
 }
+#prontuario:hover{
+    background-color: white;
+    color: #004E64;
+    font-weight: bold;
+}
+
+#cadastro{
+    background-color: #004E64;
+    font-family: minhafonte;
+    font-size: 150%;
+    color: white;
+    position: absolute;
+    top: 23%;
+    width: 90%;
+    left: 4%;
+    cursor: pointer;
+}
+#cadastro:hover{
+    background-color: white;
+    color: #004E64;
+    font-weight: bold;
+}
+#cdu1{
+    font-family: minhafonte;
+    font-size: 140%;
+    text-align: center;
+    color: #004E64;
+    font-weight: bold;
+}
+#cdu2{
+    font-family: minhafonte;
+    font-size: 140%;
+    text-align: center;
+    color: #004E64;
+    font-weight: bold;
+
+}
+#cdu3{
+    font-family: minhafonte;
+    font-size: 140%;
+    text-align: center;
+    color: #004E64;
+    font-weight: bold;
+
+}
+
+#alteracao{
+    background-color: #004E64;
+    font-family: minhafonte;
+    font-size: 150%;
+    color: white;
+    position: absolute;
+    top: 32%;
+    width: 90%;
+    left: 4%;
+    cursor: pointer;
+}
+#alteracao:hover{
+    background-color: white;
+    color: #004E64;
+    font-weight: bold;
+}
+#adu1{
+    font-family: minhafonte;
+    font-size: 140%;
+    text-align: center;
+    color: #004E64;
+    font-weight: bold;
+}
+#adu2{
+    font-family: minhafonte;
+    font-size: 140%;
+    text-align: center;
+    color: #004E64;
+    font-weight: bold;
+
+}
+
+
+
 
 #linha2{
     position: absolute;

@@ -35,15 +35,19 @@
 }
 
 #listagem{
-    background-color: white;
+    background-color: #004E64;
     font-family: minhafonte;
     font-size: 150%;
-    color: #004E64;
+    color: white;
     position: absolute;
     width: 90%;
     left: 4%;
     top: 9%;
     cursor: pointer;
+}
+#listagem:hover{
+    background-color: white;
+    color: #004E64;
     font-weight: bold;
 }
 
@@ -65,15 +69,16 @@
 }
 
 #cadastro{
-    background-color: #004E64;
+    background-color: white;
     font-family: minhafonte;
     font-size: 150%;
-    color: white;
+    color: #004E64;
     position: absolute;
     top: 23%;
     width: 90%;
     left: 4%;
     cursor: pointer;
+    font-weight: bold;
 }
 #cadastro:hover{
     background-color: white;
@@ -159,19 +164,23 @@
     color: #004E64;
 }
 
+
+
+
+
 #titulo{
     font-family: minhafonte;
     color: #004E64;
     font-size: 260%;
     position: absolute;
-    top: 13%;
+    top: 15%;
     padding-left: 15%;
 }
 #card2{
     background-color: white;
     position: absolute;
     width: 40%;
-    height:40%;
+    height:70%;
     left: 15%;
     top: 24%;
 }
@@ -181,10 +190,10 @@
     font-size: 150%;
     color: white;
     position: absolute;
-    left: 57%;
-    top: 24%;
-    width: 12%;
-    height: 5%;
+    left: 40%;
+    top: 92%;
+    width: 20%;
+    height: 6%;
     cursor: pointer;
 }
 #botao:hover{
