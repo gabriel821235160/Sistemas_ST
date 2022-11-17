@@ -25,22 +25,27 @@
         <input
           id="cpf"
           type="text"
+          matInput
+          [(ngModel)]="cpf"
           placeholder="CPF"
         />
         <pre></pre>
         <input
           id="senha"
           type="password"
-          
+          matInput
+          [(ngModel)]="senha"
           placeholder="********"
         />
         <pre></pre>
-        <button id="entrar" mat-button>
+        <button id="entrar" mat-button (click)="connectionLogin()">
           ENTRAR
         </button>
 
         <h4 id="ou">ou</h4>
         <a id="criar" href="">Crie sua conta</a>
+        {{ cpf }}
+        {{ senha }}
       </div>
     </body>
   </body>

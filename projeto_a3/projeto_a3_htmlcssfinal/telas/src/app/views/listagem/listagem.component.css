@@ -31,7 +31,6 @@
     position: absolute;
     width: 99%;
     top: 7%;
-    color: #004E64;
 }
 
 #listagem{
@@ -60,6 +59,13 @@
 #prontuario:hover{
     background-color: white;
     color: #004E64;
+}
+
+#cadastro{
+
+}
+#alteracao{
+    
 }
 
 #linha2{
