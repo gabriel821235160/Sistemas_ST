@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
-          this.rota.navigate(['prontuario']);
+          this.rota.navigate(['teladeinicio']);
         }
       }
     )

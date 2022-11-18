@@ -23,8 +23,8 @@ const routes: Routes = [
   {path: 'cadastromed', component:CadastromedComponent},
   {path: 'cadastropac', component:CadastropacComponent},
   {path: 'teladeinicio', component:TeladeinicioComponent},
-  {path: '', component:AlteracaofuncComponent},
-  {path: 'alteracaomed', component:AlteracaomedComponent},
+  {path: 'alteracaofunc', component:AlteracaofuncComponent},
+  {path: 'alteracaomedico', component:AlteracaomedComponent},
 ];
 
 @NgModule({
