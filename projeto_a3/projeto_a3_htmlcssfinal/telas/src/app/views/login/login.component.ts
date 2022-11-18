@@ -35,11 +35,6 @@ export class LoginComponent implements OnInit {
     )
     
   }
-  
-  jose(){
-    console.log("estou por aqui")
-  }
-
   ngOnInit(): void {
   }
 

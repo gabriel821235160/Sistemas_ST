@@ -15,7 +15,7 @@ import { InicialmedComponent } from './views/inicialmed/inicialmed.component';
 
 const routes: Routes = [
 
-  {path: 'inicial', component: InicialComponent},
+  {path: '', component: InicialComponent},
   {path: 'login', component: LoginComponent},
   {path: 'listagem', component:ListagemComponent},
   {path: 'prontuario', component: ProntuarioComponent},
