@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeladeinicioComponent } from './teladeinicio.component';
+import { InicialfuncComponent } from './inicialfunc.component';
 
-describe('TeladeinicioComponent', () => {
-  let component: TeladeinicioComponent;
-  let fixture: ComponentFixture<TeladeinicioComponent>;
+describe('InicialfuncComponent', () => {
+  let component: InicialfuncComponent;
+  let fixture: ComponentFixture<InicialfuncComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TeladeinicioComponent ]
+      declarations: [ InicialfuncComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TeladeinicioComponent);
+    fixture = TestBed.createComponent(InicialfuncComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

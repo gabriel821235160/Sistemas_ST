@@ -27,15 +27,26 @@
         <button mat-menu-item id="adu1">Funcionário</button>
         <button mat-menu-item id="adu2">Médico</button>
         </mat-menu>
-  
-  
         <hr id="linha1" />
         <hr id="linha2" />
         <button mat-button id="sair">Sair</button>
       </mat-drawer-container>
-      <h1 id="titulo">Cadastre um Funcionário:</h1>
       <mat-drawer-container id="card2">
         <button mat-button id="botao">Cadastrar</button>
+        <h1 id="titulo">Cadastre um Funcionário:</h1>
+        <form method="post"> 
+          <input id="nome" type="text" placeholder="Nome Completo">
+          <pre></pre>
+          <input id="cpf" type="text" placeholder="CPF">
+          <input id="datadenascimento" type="text" placeholder="Data de Nascimento">
+          <pre></pre>
+          <input id="senha" type="password" placeholder="Senha">
+          <pre></pre>
+        </form>
+
+
+
+
       </mat-drawer-container>
 </body>
 </html>

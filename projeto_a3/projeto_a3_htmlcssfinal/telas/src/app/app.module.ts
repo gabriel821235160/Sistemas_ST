@@ -21,16 +21,17 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenu, MatMenuModule} from '@angular/material/menu';
 
-import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { InicialComponent } from './views/inicial/inicial.component';
 import { ListagemComponent } from './views/listagem/listagem.component';
 import { ProntuarioComponent } from './views/prontuario/prontuario.component';
 import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.component';
 import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
 import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
-import { TeladeinicioComponent } from './views/teladeinicio/teladeinicio.component';
 import { AlteracaofuncComponent } from './views/alteracaofunc/alteracaofunc.component';
 import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.component';
+import { InicialmedComponent } from './views/inicialmed/inicialmed.component';
+import { InicialfuncComponent } from './views/inicialfunc/inicialfunc.component';
+import { InicialadmComponent } from './views/inicialadm/inicialadm.component';
 
 
 
@@ -39,16 +40,18 @@ import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.compone
     AppComponent,
     LoginComponent,
     TopoComponent,
-    CadastroComponent,
     InicialComponent,
     ListagemComponent,
     ProntuarioComponent,
     CadastrofuncComponent,
     CadastromedComponent,
     CadastropacComponent,
-    TeladeinicioComponent,
     AlteracaofuncComponent,
     AlteracaomedComponent,
+    InicialmedComponent,
+    InicialfuncComponent,
+    InicialadmComponent,
+    InicialmedComponent,
   ],
 
   imports: [
