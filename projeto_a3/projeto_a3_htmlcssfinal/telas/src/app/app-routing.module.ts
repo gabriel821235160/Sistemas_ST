@@ -9,6 +9,8 @@ import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.compone
 import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
 import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
 import { TeladeinicioComponent } from './views/teladeinicio/teladeinicio.component';
+import { AlteracaofuncComponent } from './views/alteracaofunc/alteracaofunc.component';
+import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.component';
 
 const routes: Routes = [
 
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path: 'cadastrofunc', component:CadastrofuncComponent},
   {path: 'cadastromed', component:CadastromedComponent},
   {path: 'cadastropac', component:CadastropacComponent},
-  {path: '', component:TeladeinicioComponent}
+  {path: 'teladeinicio', component:TeladeinicioComponent},
+  {path: '', component:AlteracaofuncComponent},
+  {path: 'alteracaomed', component:AlteracaomedComponent},
 ];
 
 @NgModule({

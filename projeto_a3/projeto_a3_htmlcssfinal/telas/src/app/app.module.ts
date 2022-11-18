@@ -29,6 +29,8 @@ import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.compone
 import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
 import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
 import { TeladeinicioComponent } from './views/teladeinicio/teladeinicio.component';
+import { AlteracaofuncComponent } from './views/alteracaofunc/alteracaofunc.component';
+import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.component';
 
 
 
@@ -45,6 +47,8 @@ import { TeladeinicioComponent } from './views/teladeinicio/teladeinicio.compone
     CadastromedComponent,
     CadastropacComponent,
     TeladeinicioComponent,
+    AlteracaofuncComponent,
+    AlteracaomedComponent,
   ],
 
   imports: [
