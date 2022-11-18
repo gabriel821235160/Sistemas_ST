@@ -28,6 +28,7 @@ import { ProntuarioComponent } from './views/prontuario/prontuario.component';
 import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.component';
 import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
 import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
+import { TeladeinicioComponent } from './views/teladeinicio/teladeinicio.component';
 
 
 
@@ -43,6 +44,7 @@ import { CadastropacComponent } from './views/cadastropac/cadastropac.component'
     CadastrofuncComponent,
     CadastromedComponent,
     CadastropacComponent,
+    TeladeinicioComponent,
   ],
 
   imports: [

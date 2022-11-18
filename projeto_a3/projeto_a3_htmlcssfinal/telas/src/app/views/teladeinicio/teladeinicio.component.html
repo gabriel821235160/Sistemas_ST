@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Início</title>
+</head>
+<body>
+    <mat-drawer-container id="card">
+        <button mat-button id="inicio">Início</button>
+        <button mat-button id="listagem">
+          Listagem de <br />
+          Pacientes
+        </button>
+        <button mat-button id="prontuario">Prontuário</button>
+
+        
+        <button mat-button [matMenuTriggerFor]="menu" id="cadastro">Cadastro de <br> Usuários</button>
+      <mat-menu #menu="matMenu">
+      <button mat-menu-item id="cdu1">Funcionário</button>
+      <button mat-menu-item id="cdu2">Médico</button>
+      <button mat-menu-item id="cdu3">Paciente</button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="aboveMenu" id="alteracao">Alteração de <br> Usuários</button>
+      <mat-menu #aboveMenu="matMenu">
+      <button mat-menu-item id="adu1">Funcionário</button>
+      <button mat-menu-item id="adu2">Médico</button>
+      </mat-menu>
+
+
+        <hr id="linha1" />
+        <hr id="linha2" />
+        <button mat-button id="sair">Sair</button>
+      </mat-drawer-container>
+  <h1 id="titulo">aaaaaaa</h1>
+
+
+  <mat-drawer-container id="card2">
+        
+  </mat-drawer-container>
+
+</body>
+</html>
