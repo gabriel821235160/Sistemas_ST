@@ -10,9 +10,14 @@ import { Router } from '@angular/router';
 export class InicialComponent implements OnInit {
 
   constructor(
+    private HttpClient: HttpClient,
+    private rota: Router
   ) { }
+
+  connectionInicial(){
+    this.rota.navigate(['login']);
+  }
 
   ngOnInit(): void {
   }
-
 }

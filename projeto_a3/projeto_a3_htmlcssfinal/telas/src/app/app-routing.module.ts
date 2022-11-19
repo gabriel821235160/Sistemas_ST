@@ -2,31 +2,51 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { InicialComponent } from './views/inicial/inicial.component';
-import { ProntuarioComponent } from './views/prontuario/prontuario.component';
-import { ListagemComponent } from './views/listagem/listagem.component';
-import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.component';
-import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
-import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
-import { AlteracaofuncComponent } from './views/alteracaofunc/alteracaofunc.component';
-import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.component';
-import { InicialadmComponent } from './views/inicialadm/inicialadm.component';
-import { InicialfuncComponent } from './views/inicialfunc/inicialfunc.component';
-import { InicialmedComponent } from './views/inicialmed/inicialmed.component';
+
+import { TelainicialadmComponent } from './views/telasAdm/telainicialadm/telainicialadm.component';
+import { ListagemadmComponent } from './views/telasAdm/listagemadm/listagemadm.component';
+import { ProntuarioadmComponent } from './views/telasAdm/prontuarioadm/prontuarioadm.component';
+import { CadastrofuncadmComponent } from './views/telasAdm/cadastrofuncadm/cadastrofuncadm.component';
+import { CadastromedadmComponent } from './views/telasAdm/cadastromedadm/cadastromedadm.component';
+import { CadastropacadmComponent } from './views/telasAdm/cadastropacadm/cadastropacadm.component';
+import { AlteracaofuncadmComponent } from './views/telasAdm/alteracaofuncadm/alteracaofuncadm.component';
+import { AlteracaomedadmComponent } from './views/telasAdm/alteracaomedadm/alteracaomedadm.component';
+
+
+import { TelainicialfuncComponent } from './views/telasFuncionario/telainicialfunc/telainicialfunc.component';
+import { ListagemfuncComponent } from './views/telasFuncionario/listagemfunc/listagemfunc.component';
+import { CadastropacfuncComponent } from './views/telasFuncionario/cadastropacfunc/cadastropacfunc.component';
+
+
+import { TelainicialmedComponent } from './views/telasMedico/telainicialmed/telainicialmed.component';
+import { ListagemmedComponent } from './views/telasMedico/listagemmed/listagemmed.component';
+import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontuariomed.component';
+
+
 
 const routes: Routes = [
 
-  {path: '', component: InicialComponent},
+  {path: 'incial', component: InicialComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'listagem', component:ListagemComponent},
-  {path: 'prontuario', component: ProntuarioComponent},
-  {path: 'cadastrofunc', component:CadastrofuncComponent},
-  {path: 'cadastromed', component:CadastromedComponent},
-  {path: 'cadastropac', component:CadastropacComponent},
-  {path: 'alteracaofunc', component:AlteracaofuncComponent},
-  {path: 'alteracaomedico', component:AlteracaomedComponent},
-  {path: 'incialadm', component:InicialadmComponent},
-  {path: 'inicialfunc', component:InicialfuncComponent},
-  {path: 'inicialmed', component:InicialmedComponent},
+
+  {path: 'telainicialadm', component:TelainicialadmComponent},
+  {path: 'listagemadm', component:ListagemadmComponent},
+  {path: 'prontuarioadm', component:ProntuarioadmComponent},
+  {path: 'cadastrofuncadm', component:CadastrofuncadmComponent},
+  {path: 'cadastromedadm', component:CadastromedadmComponent},
+  {path: 'cadastropacadm', component:CadastropacadmComponent},
+  {path: 'alteracaofuncadm', component:AlteracaofuncadmComponent},
+  {path: 'alteracaomedadm', component:AlteracaomedadmComponent},
+
+
+  {path: 'telainicialfunc', component:TelainicialfuncComponent},
+  {path: 'listagemfunc', component:ListagemfuncComponent},
+  {path: 'cadastropacfunc', component:CadastropacfuncComponent},
+
+  {path: 'telainicialmed', component:TelainicialmedComponent},
+  {path: 'listagemmed', component:ListagemmedComponent},
+  {path: 'prontuariomed', component:ProntuariomedComponent},
+
 ];
 
 @NgModule({

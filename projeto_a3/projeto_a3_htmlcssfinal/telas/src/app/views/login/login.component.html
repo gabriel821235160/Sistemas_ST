@@ -22,21 +22,9 @@
         </ul>
         <hr />
         <h1>LOGIN</h1>
-        <input
-          id="cpf"
-          type="text"
-          matInput
-          [(ngModel)]="cpf"
-          placeholder="CPF"
-        />
+        <input id="cpf" type="text" matInput="cpf" placeholder="CPF" />
         <pre></pre>
-        <input
-          id="senha"
-          type="password"
-          matInput
-          [(ngModel)]="senha"
-          placeholder="********"
-        />
+        <input id="senha" type="password" matInput="senha"placeholder="********"/>
         <pre></pre>
         <button id="entrar" mat-button (click)="connectionLogin()">
           ENTRAR

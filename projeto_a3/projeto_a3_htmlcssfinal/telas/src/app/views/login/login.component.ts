@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
+
 //'src/app/model/medico/medico';
 @Component({
   selector: 'app-login',
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
-          this.rota.navigate(['teladeinicio']);
+          this.rota.navigate(['inicial']);
         }
       }
     )

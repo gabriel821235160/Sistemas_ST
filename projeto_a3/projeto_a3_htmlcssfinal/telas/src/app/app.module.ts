@@ -15,24 +15,28 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select';
-import {MatMenu, MatMenuModule} from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { InicialComponent } from './views/inicial/inicial.component';
-import { ListagemComponent } from './views/listagem/listagem.component';
-import { ProntuarioComponent } from './views/prontuario/prontuario.component';
-import { CadastrofuncComponent } from './views/cadastrofunc/cadastrofunc.component';
-import { CadastromedComponent } from './views/cadastromed/cadastromed.component';
-import { CadastropacComponent } from './views/cadastropac/cadastropac.component';
-import { AlteracaofuncComponent } from './views/alteracaofunc/alteracaofunc.component';
-import { AlteracaomedComponent } from './views/alteracaomed/alteracaomed.component';
-import { InicialmedComponent } from './views/inicialmed/inicialmed.component';
-import { InicialfuncComponent } from './views/inicialfunc/inicialfunc.component';
-import { InicialadmComponent } from './views/inicialadm/inicialadm.component';
 
+import { ListagemadmComponent } from './views/telasAdm/listagemadm/listagemadm.component';
+import { ProntuarioadmComponent } from './views/telasAdm/prontuarioadm/prontuarioadm.component';
+import { CadastrofuncadmComponent } from './views/telasAdm/cadastrofuncadm/cadastrofuncadm.component';
+import { CadastromedadmComponent } from './views/telasAdm/cadastromedadm/cadastromedadm.component';
+import { CadastropacadmComponent } from './views/telasAdm/cadastropacadm/cadastropacadm.component';
+import { AlteracaofuncadmComponent } from './views/telasAdm/alteracaofuncadm/alteracaofuncadm.component';
+import { AlteracaomedadmComponent } from './views/telasAdm/alteracaomedadm/alteracaomedadm.component';
+import { ListagemfuncComponent } from './views/telasFuncionario/listagemfunc/listagemfunc.component';
+import { CadastropacfuncComponent } from './views/telasFuncionario/cadastropacfunc/cadastropacfunc.component';
+import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontuariomed.component';
+import { TelainicialmedComponent } from './views/telasMedico/telainicialmed/telainicialmed.component';
+import { TelainicialfuncComponent } from './views/telasFuncionario/telainicialfunc/telainicialfunc.component';
+import { TelainicialadmComponent } from './views/telasAdm/telainicialadm/telainicialadm.component';
+import { ListagemmedComponent } from './views/telasMedico/listagemmed/listagemmed.component';
 
 
 @NgModule({
@@ -41,17 +45,20 @@ import { InicialadmComponent } from './views/inicialadm/inicialadm.component';
     LoginComponent,
     TopoComponent,
     InicialComponent,
-    ListagemComponent,
-    ProntuarioComponent,
-    CadastrofuncComponent,
-    CadastromedComponent,
-    CadastropacComponent,
-    AlteracaofuncComponent,
-    AlteracaomedComponent,
-    InicialmedComponent,
-    InicialfuncComponent,
-    InicialadmComponent,
-    InicialmedComponent,
+    ListagemadmComponent,
+    ProntuarioadmComponent,
+    CadastrofuncadmComponent,
+    CadastromedadmComponent,
+    CadastropacadmComponent,
+    AlteracaofuncadmComponent,
+    AlteracaomedadmComponent,
+    ListagemfuncComponent,
+    CadastropacfuncComponent,
+    ProntuariomedComponent,
+    TelainicialmedComponent,
+    TelainicialfuncComponent,
+    TelainicialadmComponent,
+    ListagemmedComponent
   ],
 
   imports: [
@@ -70,7 +77,7 @@ import { InicialadmComponent } from './views/inicialadm/inicialadm.component';
     MatDividerModule,
     MatTableModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
   ],
 
   providers: [],
