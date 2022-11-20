@@ -27,7 +27,7 @@ import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontu
 
 const routes: Routes = [
 
-  {path: '', component: InicialComponent},
+  {path: 'inicial', component: InicialComponent},
   {path: 'login', component: LoginComponent},
 
   {path: 'telainicialadm', component:TelainicialadmComponent},
@@ -42,7 +42,7 @@ const routes: Routes = [
 
   {path: 'telainicialfunc', component:TelainicialfuncComponent},
   {path: 'listagemfunc', component:ListagemfuncComponent},
-  {path: 'cadastropacfunc', component:CadastropacfuncComponent},
+  {path: '', component:CadastropacfuncComponent},
   {path: 'prontuariofunc', component:ProntuariofuncComponent},
 
   {path: 'telainicialmed', component:TelainicialmedComponent},

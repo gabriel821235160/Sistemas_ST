@@ -30,21 +30,18 @@
         <button mat-button id="sair">Sair</button>
       </mat-drawer-container>
       <mat-drawer-container id="card2">
-        <button mat-button id="botao">Cadastrar</button>
+        
         <h1 id="titulo">Cadastre um Funcionário:</h1>
-        <form method="post"> 
-          <input id="nome" type="text" placeholder="Nome Completo">
+         
+          <input id="nome" type="text" matInput="nome" [(ngModel)]="nome" placeholder="Nome Completo">
           <pre></pre>
-          <input id="cpf" type="text" placeholder="CPF">
-          <input id="datadenascimento" type="text" placeholder="Data de Nascimento">
+          <input id="cpf" type="text" matInput="cpf" [(ngModel)]="cpf" placeholder="CPF">
+          
+          <input id="dt_nascimento" type="text" matInput="dt_nascimento" [(ngModel)]="dt_nascimento" placeholder="Data de Nascimento">
           <pre></pre>
-          <input id="senha" type="password" placeholder="Senha">
+          <input id="senha" type="password" matInput="senha" [(ngModel)]="senha" placeholder="Senha">
           <pre></pre>
-        </form>
-
-
-
-
+          <button mat-button id="botao" (click)="connectionCadastrofunc()">Cadastrar</button>
       </mat-drawer-container>
 </body>
 </html>

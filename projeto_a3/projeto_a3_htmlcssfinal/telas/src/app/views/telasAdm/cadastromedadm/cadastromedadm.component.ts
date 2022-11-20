@@ -9,10 +9,35 @@ import { Router } from '@angular/router';
 })
 export class CadastromedadmComponent implements OnInit {
 
+  nome=''
+  cpf=''
+  especialidade=''
+  crm=''
+  dt_nascimento=''
+  senha=''
+  acesso='1'
+  tipo_acesso='Médico'
+
+
   constructor(
     private HttpClient: HttpClient,
     private rota: Router
   ) { }
+
+  connectionCadastromed(){
+    return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:8000/cadastro-medico', 
+    {nome: this.nome, cpf: this.cpf, crm: this.crm, especialidade: this.especialidade, dt_nascimento: this.dt_nascimento, senha: this.senha, acesso:this.acesso,tipo_acesso: this.tipo_acesso})
+    .subscribe(
+      (res) => {
+        if(res.erro){
+          console.log(res.mensagem)
+        }
+        else{
+          console.log('Cadastrado com sucesso!')
+        }
+      }
+    )
+  }
 
   connectionInicio(){
     this.rota.navigate(['telainicialadm'])

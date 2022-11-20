@@ -168,7 +168,6 @@ app.post("/logar", async (req, res) => {
             mensagem: "CPF ou senha incorretos! (usuário não encontrado)"
         })
     }
-    console.log("vai corithians")
     console.log(usuario.nome)
     console.log(usuario.tipo_acesso)
 
