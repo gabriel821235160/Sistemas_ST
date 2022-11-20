@@ -37,6 +37,7 @@ import { TelainicialmedComponent } from './views/telasMedico/telainicialmed/tela
 import { TelainicialfuncComponent } from './views/telasFuncionario/telainicialfunc/telainicialfunc.component';
 import { TelainicialadmComponent } from './views/telasAdm/telainicialadm/telainicialadm.component';
 import { ListagemmedComponent } from './views/telasMedico/listagemmed/listagemmed.component';
+import { ProntuariofuncComponent } from './views/telasFuncionario/prontuariofunc/prontuariofunc.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ListagemmedComponent } from './views/telasMedico/listagemmed/listagemme
     TelainicialmedComponent,
     TelainicialfuncComponent,
     TelainicialadmComponent,
-    ListagemmedComponent
+    ListagemmedComponent,
+    ProntuariofuncComponent
   ],
 
   imports: [

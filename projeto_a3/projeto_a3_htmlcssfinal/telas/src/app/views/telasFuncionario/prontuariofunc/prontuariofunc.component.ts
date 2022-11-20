@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-prontuariomed',
-  templateUrl: './prontuariomed.component.html',
-  styleUrls: ['./prontuariomed.component.css']
+  selector: 'app-prontuariofunc',
+  templateUrl: './prontuariofunc.component.html',
+  styleUrls: ['./prontuariofunc.component.css']
 })
-export class ProntuariomedComponent implements OnInit {
+export class ProntuariofuncComponent implements OnInit {
 
   constructor(
     private HttpClient: HttpClient,
@@ -22,8 +22,9 @@ export class ProntuariomedComponent implements OnInit {
     this.rota.navigate(['listagemmed'])
   }
 
-
-
+  connectionCadastropacfunc(){
+    this.rota.navigate(['cadastropacfunc']);
+  }
 
 
   ngOnInit(): void {

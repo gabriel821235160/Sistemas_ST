@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alteracaofuncadm',
@@ -7,7 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlteracaofuncadmComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private HttpClient: HttpClient,
+    private rota: Router
+  ) { }
+
+
+  connectionInicio(){
+    this.rota.navigate(['telainicialadm'])
+  }
+
+  connectionListagem(){
+    this.rota.navigate(['listagemadm'])
+  }
+
+  connectionCadastromed(){
+    this.rota.navigate(['cadastromedadm'])
+  }
+
+  connectionCadastrofunc(){
+    this.rota.navigate(['cadastrofuncadm'])
+  }
+
+  connectionCadastropac(){
+    this.rota.navigate(['cadastropacadm'])
+  }
+
+  connectionAlteracaomed(){
+    this.rota.navigate(['alteracaomedadm'])
+  }
 
   ngOnInit(): void {
   }

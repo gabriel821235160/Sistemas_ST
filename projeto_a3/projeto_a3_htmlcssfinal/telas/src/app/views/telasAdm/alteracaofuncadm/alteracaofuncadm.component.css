@@ -51,30 +51,13 @@
     font-weight: bold;
 }
 
-#prontuario{
-    background-color: #004E64;
-    font-family: minhafonte;
-    font-size: 150%;
-    color: white;
-    position: absolute;
-    top: 18%;
-    width: 90%;
-    left: 4%;
-    cursor: pointer;
-}
-#prontuario:hover{
-    background-color: white;
-    color: #004E64;
-    font-weight: bold;
-}
-
 #cadastro{
     background-color: #004E64;
     font-family: minhafonte;
     font-size: 150%;
     color: white;
     position: absolute;
-    top: 23%;
+    top: 17%;
     width: 90%;
     left: 4%;
     cursor: pointer;
@@ -97,6 +80,7 @@
     text-align: center;
     color: #004E64;
     font-weight: bold;
+
 }
 #cdu3{
     font-family: minhafonte;
@@ -104,6 +88,7 @@
     text-align: center;
     color: #004E64;
     font-weight: bold;
+
 }
 
 #alteracao{
@@ -112,13 +97,12 @@
     font-size: 150%;
     color: #004E64;
     position: absolute;
-    top: 32%;
+    top: 25%;
     width: 90%;
     left: 4%;
     cursor: pointer;
     font-weight: bold;
 }
-
 #adu1{
     font-family: minhafonte;
     font-size: 140%;

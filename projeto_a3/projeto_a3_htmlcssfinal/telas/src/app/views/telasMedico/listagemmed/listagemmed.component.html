@@ -8,9 +8,9 @@
   </head>
   <body>
     <mat-drawer-container id="card">
-      <button mat-button id="inicio">Início</button>
+      <button mat-button id="inicio" (click)="connectionInicio()">Início</button>
       <button mat-button id="listagem">Listagem de <br> Pacientes</button>
-      <button mat-button id="prontuario">Prontuário</button>
+      <button mat-button id="prontuario"></button>
       
       <hr id="linha1" />
       <hr id="linha2" />
@@ -21,6 +21,6 @@
       
     </mat-drawer-container>
 
-    <button mat-button id="botao">Abrir Prontuário</button>
+    <button mat-button id="botao" (click)="connectionAbrirprontuario()">Abrir Prontuário</button>
   </body>
 </html>
