@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   
  
  connectionLogin(){
-    return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:7000/logar',
+    return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:8000/logar',
     {cpf: this.cpf, senha: this.senha})
     .subscribe(
       (res) => {
@@ -29,12 +29,24 @@ export class LoginComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
-          this.rota.navigate(['inicial']);
+          if(res.mensagem.search(/Funcionário/)!=-1){
+            this.rota.navigate(['telainicialfunc'])
+          }else if(res.mensagem.search(/Médico/)!=-1){
+            this.rota.navigate(['telainicialmed'])
+          }else if(res.mensagem.search(/Administrador/)!=-1){
+            this.rota.navigate(['telainicialadm']);
+          }
         }
       }
     )
     
   }
+
+  jose(){
+    console.log("estou por aqui")
+  }
+
+
   ngOnInit(): void {
   }
 

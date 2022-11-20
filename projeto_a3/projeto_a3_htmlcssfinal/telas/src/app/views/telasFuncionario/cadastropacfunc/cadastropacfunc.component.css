@@ -51,30 +51,13 @@
     font-weight: bold;
 }
 
-#prontuario{
-    background-color: #004E64;
-    font-family: minhafonte;
-    font-size: 150%;
-    color: white;
-    position: absolute;
-    top: 18%;
-    width: 90%;
-    left: 4%;
-    cursor: pointer;
-}
-#prontuario:hover{
-    background-color: white;
-    color: #004E64;
-    font-weight: bold;
-}
-
 #cadastro{
     background-color: white;
     font-family: minhafonte;
     font-size: 150%;
     color: #004E64;
     position: absolute;
-    top: 17%;
+    top: 18%;
     width: 90%;
     left: 4%;
     cursor: pointer;

@@ -8,17 +8,14 @@ const Usuario = conexao.define('tb_usuarios', {
     },
     cpf: {
         type: Sequelize.BIGINT,
-        primaryKey: true
-    },
-    dt_nascimento: {
-        type: Sequelize.STRING,
-    },
-    crm: {
-        type: Sequelize.BIGINT
-    },
+        primaryKey: true,
+      },
     senha: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    acesso: {
+        type: Sequelize.TINYINT,
     },
     tipo_acesso: {
         type: Sequelize.STRING
