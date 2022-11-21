@@ -24,7 +24,8 @@ export class CadastrofuncadmComponent implements OnInit {
 
   connectionCadastrofunc(){
     return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:8000/cadastro-funcionario', 
-    {nome: this.nome, cpf: this.cpf, dt_nascimento: this.dt_nascimento, senha: this.senha, acesso:this.acesso,tipo_acesso: this.tipo_acesso})
+    {nome: this.nome, cpf: this.cpf, dt_nascimento: this.dt_nascimento, senha: this.senha, 
+      acesso:this.acesso,tipo_acesso: this.tipo_acesso})
     .subscribe(
       (res) => {
         if(res.erro){
@@ -42,8 +43,8 @@ export class CadastrofuncadmComponent implements OnInit {
     this.rota.navigate(['telainicialadm'])
   }
 
-  connectionListagem(){
-    this.rota.navigate(['listagemadm'])
+  connectionProntuario(){
+    this.rota.navigate(['prontuarioadm']);
   }
 
   connectionCadastromed(){

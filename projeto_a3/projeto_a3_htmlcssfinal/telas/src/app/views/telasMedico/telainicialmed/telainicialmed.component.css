@@ -35,30 +35,13 @@
     top: 7%;
 }
 
-#listagem{
-    background-color: #004E64;
-    font-family: minhafonte;
-    font-size: 150%;
-    color: white;
-    position: absolute;
-    width: 90%;
-    left: 4%;
-    top: 9%;
-    cursor: pointer;
-}
-#listagem:hover{
-    background-color: white;
-    color: #004E64;
-    font-weight: bold;
-}
-
 #prontuario{
     background-color: #004E64;
     font-family: minhafonte;
     font-size: 150%;
     color: white;
     position: absolute;
-    top: 18%;
+    top: 10%;
     width: 90%;
     left: 4%;
     cursor: pointer;
@@ -100,21 +83,4 @@
     position: absolute;
     top: 13%;
     padding-left: 13%;
-}
-
-
-
-
-
-
-
-
-
-#card2{
-    background-color: white;
-    position: absolute;
-    width: 40%;
-    height:70%;
-    left: 13%;
-    top: 20%;
 }

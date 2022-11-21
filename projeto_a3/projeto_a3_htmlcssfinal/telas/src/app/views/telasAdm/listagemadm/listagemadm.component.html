@@ -9,7 +9,7 @@
   <body>
     <mat-drawer-container id="card">
       <button mat-button id="inicio" (click)="connectionInicio()">Início</button>
-      <button mat-button id="listagem">Listagem de <br> Pacientes</button>
+      <button mat-button id="listagem">Busca por <br>Pacientes</button>
       <button mat-button id="prontuario"></button>
 
       <button mat-button [matMenuTriggerFor]="menu" id="cadastro">Cadastro de <br> Usuários</button>
@@ -23,11 +23,9 @@
       <hr id="linha2" />
       <button mat-button id="sair">Sair</button>
     </mat-drawer-container>
-    <h1 id="titulo">Selecione um paciente:</h1>
-    <mat-drawer-container id="card2">
+    <h1 id="titulo">Buscar por CPF:</h1>
       
-      
-    </mat-drawer-container>
+    <input id="buscar" type="text" matInput="cpf" [(ngModel)]="cpf" name="search" placeholder="Buscar">
 
     <button mat-button id="botao" (click)="connectionAbrirprontuario()">Abrir Prontuário</button>
   </body>

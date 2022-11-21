@@ -115,7 +115,7 @@
     color: #004E64;
     font-size: 260%;
     position: absolute;
-    top: 13%;
+    top: 16%;
     padding-left: 15%;
 }
 #botao{
@@ -124,10 +124,10 @@
     font-size: 150%;
     color: white;
     position: absolute;
-    left: 57%;
-    top: 24%;
+    left: 47%;
+    top: 29%;
     width: 12%;
-    height: 5%;
+    height: 6%;
     cursor: pointer;
 }
 #botao:hover{
@@ -136,13 +136,17 @@
 }
 
 
-
-
-#card2{
-    background-color: white;
-    position: absolute;
-    width: 40%;
-    height:40%;
+#buscar{
+    font-family: minhafonte;
+    background-color: #E7E7E7;
+    font-size: 120%;
+    text-align: center;
+    border-color: #004E64;
+    border-radius: 10px;
+    position: relative;
+    top: 20%;
     left: 15%;
-    top: 24%;
+    width: 30%;
+    height: 5%;
+
 }

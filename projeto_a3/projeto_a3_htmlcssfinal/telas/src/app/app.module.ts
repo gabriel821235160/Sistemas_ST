@@ -28,14 +28,12 @@ import { ProntuarioadmComponent } from './views/telasAdm/prontuarioadm/prontuari
 import { CadastrofuncadmComponent } from './views/telasAdm/cadastrofuncadm/cadastrofuncadm.component';
 import { CadastromedadmComponent } from './views/telasAdm/cadastromedadm/cadastromedadm.component';
 import { CadastropacadmComponent } from './views/telasAdm/cadastropacadm/cadastropacadm.component';
-import { ListagemfuncComponent } from './views/telasFuncionario/listagemfunc/listagemfunc.component';
 import { CadastropacfuncComponent } from './views/telasFuncionario/cadastropacfunc/cadastropacfunc.component';
 import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontuariomed.component';
 import { TelainicialmedComponent } from './views/telasMedico/telainicialmed/telainicialmed.component';
 import { TelainicialfuncComponent } from './views/telasFuncionario/telainicialfunc/telainicialfunc.component';
 import { TelainicialadmComponent } from './views/telasAdm/telainicialadm/telainicialadm.component';
 import { ListagemmedComponent } from './views/telasMedico/listagemmed/listagemmed.component';
-import { ProntuariofuncComponent } from './views/telasFuncionario/prontuariofunc/prontuariofunc.component';
 
 
 @NgModule({
@@ -49,14 +47,12 @@ import { ProntuariofuncComponent } from './views/telasFuncionario/prontuariofunc
     CadastrofuncadmComponent,
     CadastromedadmComponent,
     CadastropacadmComponent,
-    ListagemfuncComponent,
     CadastropacfuncComponent,
     ProntuariomedComponent,
     TelainicialmedComponent,
     TelainicialfuncComponent,
     TelainicialadmComponent,
     ListagemmedComponent,
-    ProntuariofuncComponent
   ],
 
   imports: [

@@ -1,75 +1,38 @@
 require('dotenv').config()
+const { enviarMensagem } = require('./amqp')
 const express = require('express')
+const axios = require('axios')
+const Prontuario = require('./models/prontuario')
+const cors = require("cors");
 const app = express()
 app.use(express.json())
 
 const mysql = require('mysql2')
+const { Association } = require('sequelize')
 
-const Paciente = require('../cadastro/models/paciente')
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Credentials", true);
+    app.use(cors());
+    next();
+  });
 
 
+app.post("/criar-prontuario", async (req, res) => {
+    const { cpf } = req.body
+    const resposta = await axios.get("http://localhost:8000/paciente?cpf=" + cpf)
+    await Prontuario.create({ ...req.body, ...resposta.data.paciente })
 
-app.get("/criar-prontuario", async (req, res) => {
 
-    console.log("Teste Teste")
-
-    
-    const dados_paciente = await Paciente.findAll()
-
-    console.log(dados_paciente)
+    enviarMensagem("prontuarioCriado", Buffer.from(JSON.stringify(req.body)))
 
     return res.json({
-        pacientes: dados_paciente,
-        mensagem: "OK"
-    })
+        erro: false,
+        requisição: req.body,
+        mensagem: "Prontuário Atualizado!"
+    });
 
-    /*
-    const crm = req.body.crm
-    const acesso = req.body.tipo_acesso
-    const especialidade = req.body.especialidade
-    const cpf_medico = req.body.cpf_medico
-
-
-
-    console.log(especialidade)
-    console.log(crm)
-    if (usuario == null){
-        return res.status(400).json({
-            erro: true,
-            mensagem: "Usuário não encontrado! Tente novamente"
-        })
-    }
-    
-
-    if (acesso == "administrador" || acesso == "Administrador" || acesso == "adm" || acesso == "admin"){
-       
-        if (cpf_medico != null){
-            const usuario_medico = await Usuario.findOne({
-                attributes: ['tipo_acesso', 'cpf', 'nome', 'crm', 'especialidade'],
-                where: {
-                    cpf: cpf_medico
-                }
-            })
-            console.log(especialidade)
-            console.log(crm)
-            
-
-            usuario_medico.update(
-                {tipo_acesso: "Médico", crm, especialidade},
-                {where: {cpf: cpf_medico}}
-            )
-           
-           
- 
- 
-        } else {
-            return res.status(400).json({
-                erro: true,
-                mensagem: "Mudança não permitida!"
-            })
-        }
-    }    
-    */
 })
 
 

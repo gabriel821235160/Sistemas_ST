@@ -34,30 +34,13 @@
     top: 7%;
 }
 
-#listagem{
-    background-color: #004E64;
-    font-family: minhafonte;
-    font-size: 150%;
-    color: white;
-    position: absolute;
-    width: 90%;
-    left: 4%;
-    top: 9%;
-    cursor: pointer;
-}
-#listagem:hover{
-    background-color: white;
-    color: #004E64;
-    font-weight: bold;
-}
-
 #prontuario{
     background-color: white;
     font-family: minhafonte;
     font-size: 150%;
     color: #004E64;
     position: absolute;
-    top: 18%;
+    top: 10%;
     width: 90%;
     left: 4%;
     cursor: pointer;
@@ -116,23 +99,22 @@
     left: 13%;
     top: 20%;
 }
-#paciente{
+
+#cpf{
     font-family: minhafonte;
-    color: #004E64;
-    font-size: 150%;
-    position: absolute;
-    top: 0%;
-    padding-left: 3%;
-}
-#esp1{
+    text-align: center;
     background-color: #E7E7E7;
-    font-family: minhafonte;
-    font-size: 110%;
+    border-radius: 10px;
+    border-color: #004E64;
     color: black;
-    width: 47%;
-    left: 20%;
-    top: 2%;
+    font-size: 150%;
+    position: relative;
+    top: 3%;
+    left: 3%;
+    width: 60%;
+
 }
+
 #salvar{
     background-color: #004E64;
     font-family: minhafonte;
@@ -160,106 +142,47 @@
 }
 
 
-
-#data{
-    font-family: minhafonte;
-    color: #004E64;
-    font-size: 110%;
-    position: absolute;
-    top: 13%;
-    left: 3%;
-}
-#data2{
-    background-color: #E7E7E7;
-    font-family: minhafonte;
-    font-size: 100%;
-    color: black;
-    width: 15%;
-    position: absolute;
-    left: 27%;
-    top: 14%;
-    
-}
-#idade{
-    font-family: minhafonte;
-    color: #004E64;
-    font-size: 110%;
-    position: absolute;
-    left: 49%;
-    top: 13%;
-}
-#idade2{
-    background-color: #E7E7E7;
-    font-family: minhafonte;
-    font-size: 100%;
-    border-radius: 5px;
-    color: black;
-    width: 18%;
-    height: 4%;
-    position: absolute;
-    left: 57%;
-    top: 14%;
-}
 #sexo{
     font-family: minhafonte;
-    color: #004E64;
+    text-align: center;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    border-color: #004E64;
+    color: black;
     font-size: 110%;
     position: absolute;
     left: 3%;
-    top: 20%;
-}
-#sexo2{
-    background-color: #E7E7E7;
-    font-family: minhafonte;
-    font-size: 100%;
-    border-radius: 5px;
-    color: black;
-    width: 14%;
-    height: 4%;
-    position: absolute;
-    left: 9%;
-    top: 21%;
+    top: 15%;
+    width: 25%;
 }
 #altura{
     font-family: minhafonte;
-    color: #004E64;
-    font-size: 110%;
-    position: absolute;
-    left: 27%;
-    top: 20%;
-}
-#altura2{
+    text-align: center;
     background-color: #E7E7E7;
-    font-family: minhafonte;
+    border-radius: 10px;
+    border-color: #004E64;
+    color: black;;
     font-size: 110%;
-    border-radius: 5px;
-    color: black;
-    width: 14%;
-    height: 4%;
     position: absolute;
-    left: 35%;
-    top: 21%;
+    right: 3%;
+    top: 15%;
+    width: 25%;
 }
+
 #peso{
     font-family: minhafonte;
-    color: #004E64;
-    font-size: 110%;
-    position: absolute;
-    left: 54%;
-    top: 20%;
-}
-#peso2{
+    text-align: center;
     background-color: #E7E7E7;
-    font-family: minhafonte;
-    font-size: 110%;
-    border-radius: 5px;
+    border-radius: 10px;
+    border-color: #004E64;
     color: black;
-    width: 14%;
-    height: 4%;
+    font-size: 110%;
     position: absolute;
-    left: 60%;
-    top: 21%;
+    left: 36%;
+    top: 15%;
+    width: 25%;
 }
+
 #linha4{
     background-color: #1A7CB2;
     position: absolute;
@@ -272,58 +195,47 @@
 
 
 #anamnese{
+    font-family: minhafonte;
+    text-align: left;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    border-color: #004E64;
+    color: black;
+    font-size: 110%;
     position: absolute;
     left: 3%;
     top:33% ;
-    width: 95%;
-    height: 40%;
+    width: 93%;
+    height: 20%;
   }
-#anamnese2{
-    width: 100%;
-    max-width:100%;
-    min-width: 100%;
-  }
-#anamnese3{
-    font-family: minhafonte;
-    font-size: 110%;
-    color: #004E64;
-    font-weight: bold;
-  }
-
 
 #hipotese{
+    font-family: minhafonte;
+    text-align: left;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    border-color: #004E64;
+    color: black;
+    font-size: 110%;
     position:absolute;
     left: 3%;
-    top:48% ;
-    width: 95%;
+    top:60% ;
+    width: 93%;
+    height: 20%;
   }
-#hipotese2{
-    width: 100%;
-    max-width:100%;
-    min-width: 100%;
-  }
-#hipotese3{
-    font-family: minhafonte;
-    font-size: 110%;
-    color: #004E64;
-    font-weight: bold;
-  }
-
 
 #prescricao{
+    font-family: minhafonte;
+    text-align: left;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    border-color: #004E64;
+    color: black;
+    font-size: 110%;
     position:absolute;
     left: 3%;
-    top:63% ;
-    width: 95%;
+    top:87% ;
+    width: 93%;
+    height: 20%;
   }
-#prescricao2{
-    width: 100%;
-    max-width:100%;
-    min-width: 100%;
-  }
-#prescricao3{
-    font-family: minhafonte;
-    font-size: 110%;
-    color: #004E64;
-    font-weight: bold;
-  }  
+ 

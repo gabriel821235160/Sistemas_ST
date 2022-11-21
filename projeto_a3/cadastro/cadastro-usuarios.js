@@ -1,13 +1,14 @@
 require('dotenv').config()
+const amqp = require('amqplib/callback_api')
 const express = require('express')
 const cors = require("cors");
 const app = express()
 //const { Sequelize } = require('sequelize')
 
 const session = require('express-session')
-const mysql = require('mysql2')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+//const mysql = require('mysql2')
+//const bcrypt = require('bcrypt')
+//const jwt = require('jsonwebtoken')
 
 
 //const Usuario = require('../prontuario/models/usuario')
@@ -134,26 +135,28 @@ app.post("/cadastro-paciente", async (req, res) => {
 
 //// ------AUTENTICAÇÃO de usuário------ FUNCIONANDO!!
 app.post("/logar", async (req, res) => {
+
+
     const usuario_medico = await Medico.findOne({
         attributes: ['nome', 'senha', 'tipo_acesso'],
         where: {
             cpf: req.body.cpf
-        },
-    });
+        }
+    })
 
     const usuario_funcionario = await Funcionario.findOne({
         attributes: ['nome', 'senha', 'tipo_acesso'],
         where: {
             cpf: req.body.cpf
-        },
-    });
+        }
+    })
 
     const usuario_administrador = await Administrador.findOne({
         attributes: ['nome', 'senha', 'tipo_acesso'],
         where: {
             cpf: req.body.cpf
-        },
-    });
+        }
+    })
 
 
     if (usuario_administrador != null) {
@@ -168,6 +171,7 @@ app.post("/logar", async (req, res) => {
             mensagem: "CPF ou senha incorretos! (usuário não encontrado)"
         })
     }
+
     console.log(usuario.nome)
     console.log(usuario.tipo_acesso)
 
@@ -205,21 +209,71 @@ app.post("/logar", async (req, res) => {
 
 })
 
+//Busca o paciente pelo cpf informado na hora da atualização do pronturário
+app.get("/paciente", async (req, res) => {
+    const { cpf } = req.query
+    console.log(cpf)
 
-app.get('/pacientes', async (req, res) => {
+    try {
+        const paciente = await Paciente.findOne({
+            where: {
+                cpf
+            },
+            attributes: ['nome', 'dt_nascimento']
+        })
 
-    const pacientes = await Paciente.findAll()
-
-    //console.log(pacientes.every(paciente => pacientes instanceof Paciente))
-    console.log("Pacientes: ", JSON.stringify(pacientes, null, 2))
-
-    return res.json({
-        pacientes: pacientes,
-        mensagem: "OK"
-    })
-
+        return res.json({
+            erro: false,
+            paciente
+        })
+    } catch (erro) {
+        return res.status(404).json({
+            mensagem: "Paciente não encontrado!"
+        })
+    } 
 })
 
+amqp.connect(`amqp://localhost`, (err, connection) => {
+    if (err) {
+        throw err;
+    }
+    connection.createChannel((err, channel) => {
+        if (err) {
+            throw err;
+        }
+        let queueName = "prontuarioCriado";
+        channel.assertQueue(queueName, {
+            durable: false
+        });
+        channel.consume(queueName, async (msg) => {
+            console.log(`Recieved : ${msg.content.toString()}`);
+            const prontuario = JSON.parse(msg.content.toString())
+            console.log(prontuario)
+            await Paciente.update({peso: prontuario.peso, sexo: prontuario.sexo, altura: prontuario.altura, anamnese: prontuario.anamnese, hip_diagnostico: prontuario.hip_diagnostico, prescricao: prontuario.prescricao}, {
+                where:{
+                    cpf: prontuario.cpf
+                }
+            })
+        }, {
+            noAck: true
+        });
+    })
+})
+
+
+//Listagem de Pacientes
+app.get("/listar-pacientes", async (req, res) => {
+    const pacientes = await Paciente.findAll({
+        attributes: ['nome']
+    })
+
+    console.log(JSON.stringify(pacientes))
+
+    return res.json({
+        erro: false,
+        lista_nomes: pacientes
+    })
+})
 
 
 

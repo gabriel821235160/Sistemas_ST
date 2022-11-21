@@ -14,11 +14,6 @@ export class TelainicialmedComponent implements OnInit {
     private rota: Router
   ) { }
 
-
-  connectionListagemmed(){
-    this.rota.navigate(['listagemmed']);
-  }
-
   connectionProntuariomed(){
     this.rota.navigate(['prontuariomed']);
   }

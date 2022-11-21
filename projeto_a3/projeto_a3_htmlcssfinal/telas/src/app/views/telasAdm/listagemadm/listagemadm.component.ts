@@ -5,21 +5,26 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-listagemadm',
   templateUrl: './listagemadm.component.html',
-  styleUrls: ['./listagemadm.component.css']
+  styleUrls: ['./listagemadm.component.css'],
 })
+ 
+
 export class ListagemadmComponent implements OnInit {
+
+  cpf=''
 
   constructor(
     private HttpClient: HttpClient,
-    private rota: Router
+    private rota: Router,
   ) { }
+
 
 connectionInicio(){
   this.rota.navigate(['telainicialadm']);
 }
 
 connectionAbrirprontuario(){
-  this.rota.navigate(['prontuarioadm']);
+  this.rota.navigate(['prontuarioadm', this.cpf]);
 }
 
 connectionCadastrofunc(){
@@ -34,7 +39,8 @@ connectionCadastropac(){
   this.rota.navigate(['cadastropacadm']);
 }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {  
+
+}
 
 }

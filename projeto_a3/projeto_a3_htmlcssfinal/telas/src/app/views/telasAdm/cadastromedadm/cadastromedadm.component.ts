@@ -44,8 +44,8 @@ export class CadastromedadmComponent implements OnInit {
     this.rota.navigate(['telainicialadm'])
   }
 
-  connectionListagem(){
-    this.rota.navigate(['listagemadm'])
+  connectionProntuario(){
+    this.rota.navigate(['prontuarioadm']);
   }
 
   connectionCadastrofunc(){
