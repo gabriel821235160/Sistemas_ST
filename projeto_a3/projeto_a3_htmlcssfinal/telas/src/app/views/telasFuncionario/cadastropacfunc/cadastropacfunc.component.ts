@@ -35,6 +35,7 @@ export class CadastropacfuncComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
+          window.location.href = window.location.href;
           console.log('Cadastrado com sucesso!')
         }
       }

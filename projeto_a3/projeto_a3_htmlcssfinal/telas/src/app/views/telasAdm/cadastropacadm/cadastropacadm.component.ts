@@ -36,6 +36,7 @@ export class CadastropacadmComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
+          window.location.href = window.location.href;
           console.log('Cadastrado com sucesso!')
         }
       }
@@ -57,17 +58,6 @@ export class CadastropacadmComponent implements OnInit {
   connectionCadastromed(){
     this.rota.navigate(['cadastromedadm'])
   }
-
-  connectionAlteracaofunc(){
-    this.rota.navigate(['alteracaofuncadm'])
-  }
-
-  connectionAlteracaomed(){
-    this.rota.navigate(['alteracaomedadm'])
-  }
-
-
-
 
   ngOnInit(): void {
   }

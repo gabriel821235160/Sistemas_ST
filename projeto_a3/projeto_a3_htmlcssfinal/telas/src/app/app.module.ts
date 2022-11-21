@@ -28,8 +28,6 @@ import { ProntuarioadmComponent } from './views/telasAdm/prontuarioadm/prontuari
 import { CadastrofuncadmComponent } from './views/telasAdm/cadastrofuncadm/cadastrofuncadm.component';
 import { CadastromedadmComponent } from './views/telasAdm/cadastromedadm/cadastromedadm.component';
 import { CadastropacadmComponent } from './views/telasAdm/cadastropacadm/cadastropacadm.component';
-import { AlteracaofuncadmComponent } from './views/telasAdm/alteracaofuncadm/alteracaofuncadm.component';
-import { AlteracaomedadmComponent } from './views/telasAdm/alteracaomedadm/alteracaomedadm.component';
 import { ListagemfuncComponent } from './views/telasFuncionario/listagemfunc/listagemfunc.component';
 import { CadastropacfuncComponent } from './views/telasFuncionario/cadastropacfunc/cadastropacfunc.component';
 import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontuariomed.component';
@@ -51,8 +49,6 @@ import { ProntuariofuncComponent } from './views/telasFuncionario/prontuariofunc
     CadastrofuncadmComponent,
     CadastromedadmComponent,
     CadastropacadmComponent,
-    AlteracaofuncadmComponent,
-    AlteracaomedadmComponent,
     ListagemfuncComponent,
     CadastropacfuncComponent,
     ProntuariomedComponent,

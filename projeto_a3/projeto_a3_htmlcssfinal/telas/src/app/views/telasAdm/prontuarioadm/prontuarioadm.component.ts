@@ -34,14 +34,6 @@ export class ProntuarioadmComponent implements OnInit {
     this.rota.navigate(['cadastropacadm'])
   }
 
-  connectionAlteracaofunc(){
-    this.rota.navigate(['alteracaomedadm'])
-  }
-
-  connectionAlteracaomed(){
-    this.rota.navigate(['alteracaomedadm'])
-  }
-
 
   ngOnInit(): void {
   }

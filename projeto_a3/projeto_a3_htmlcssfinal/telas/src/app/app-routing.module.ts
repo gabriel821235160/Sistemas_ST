@@ -9,8 +9,6 @@ import { ProntuarioadmComponent } from './views/telasAdm/prontuarioadm/prontuari
 import { CadastrofuncadmComponent } from './views/telasAdm/cadastrofuncadm/cadastrofuncadm.component';
 import { CadastromedadmComponent } from './views/telasAdm/cadastromedadm/cadastromedadm.component';
 import { CadastropacadmComponent } from './views/telasAdm/cadastropacadm/cadastropacadm.component';
-import { AlteracaofuncadmComponent } from './views/telasAdm/alteracaofuncadm/alteracaofuncadm.component';
-import { AlteracaomedadmComponent } from './views/telasAdm/alteracaomedadm/alteracaomedadm.component';
 
 
 import { TelainicialfuncComponent } from './views/telasFuncionario/telainicialfunc/telainicialfunc.component';
@@ -27,7 +25,7 @@ import { ProntuariomedComponent } from './views/telasMedico/prontuariomed/prontu
 
 const routes: Routes = [
 
-  {path: 'inicial', component: InicialComponent},
+  {path: '', component: InicialComponent},
   {path: 'login', component: LoginComponent},
 
   {path: 'telainicialadm', component:TelainicialadmComponent},
@@ -36,13 +34,10 @@ const routes: Routes = [
   {path: 'cadastrofuncadm', component:CadastrofuncadmComponent},
   {path: 'cadastromedadm', component:CadastromedadmComponent},
   {path: 'cadastropacadm', component:CadastropacadmComponent},
-  {path: 'alteracaofuncadm', component:AlteracaofuncadmComponent},
-  {path: 'alteracaomedadm', component:AlteracaomedadmComponent},
-
 
   {path: 'telainicialfunc', component:TelainicialfuncComponent},
   {path: 'listagemfunc', component:ListagemfuncComponent},
-  {path: '', component:CadastropacfuncComponent},
+  {path: 'cadastropacfunc', component:CadastropacfuncComponent},
   {path: 'prontuariofunc', component:ProntuariofuncComponent},
 
   {path: 'telainicialmed', component:TelainicialmedComponent},

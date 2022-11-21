@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { BuiltinTypeName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -30,6 +31,7 @@ export class CadastrofuncadmComponent implements OnInit {
           console.log(res.mensagem)
         }
         else{
+          window.location.href = window.location.href;
           console.log('Cadastrado com sucesso!')
         }
       }
@@ -52,13 +54,6 @@ export class CadastrofuncadmComponent implements OnInit {
     this.rota.navigate(['cadastropacadm'])
   }
 
-  connectionAlteracaofunc(){
-    this.rota.navigate(['alteracaofuncadm'])
-  }
-
-  connectionAlteracaomed(){
-    this.rota.navigate(['alteracaomedadm'])
-  }
 
 
 

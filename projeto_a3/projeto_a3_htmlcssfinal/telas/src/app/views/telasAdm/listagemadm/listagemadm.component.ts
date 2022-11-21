@@ -34,13 +34,6 @@ connectionCadastropac(){
   this.rota.navigate(['cadastropacadm']);
 }
 
-connectionAlteracaofunc(){
-  this.rota.navigate(['alteracaofuncadm'])
-}
-
-connectionAlteracaomed(){
-  this.rota.navigate(['alteracaomedadm'])
-}
   ngOnInit(): void {
   }
 

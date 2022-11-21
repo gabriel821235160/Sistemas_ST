@@ -34,14 +34,6 @@ export class TelainicialadmComponent implements OnInit {
     this.rota.navigate(['cadastropacadm']);
   }
 
-  connectionAlteracaofunc(){
-    this.rota.navigate(['alteracaofuncadm']);
-  }
-
-  connectionAlteracaomed(){
-    this.rota.navigate(['alteracaomedadm']);
-  }
-
   ngOnInit(): void {
   }
 

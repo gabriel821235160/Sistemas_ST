@@ -87,38 +87,6 @@
 
 }
 
-#alteracao{
-    background-color: #004E64;
-    font-family: minhafonte;
-    font-size: 150%;
-    color: white;
-    position: absolute;
-    top: 27%;
-    width: 90%;
-    left: 4%;
-    cursor: pointer;
-}
-#alteracao:hover{
-    background-color: white;
-    color: #004E64;
-    font-weight: bold;
-}
-#adu1{
-    font-family: minhafonte;
-    font-size: 140%;
-    text-align: center;
-    color: #004E64;
-    font-weight: bold;
-}
-#adu2{
-    font-family: minhafonte;
-    font-size: 140%;
-    text-align: center;
-    color: #004E64;
-    font-weight: bold;
-
-}
-
 #linha2{
     position: absolute;
     width: 99%;
