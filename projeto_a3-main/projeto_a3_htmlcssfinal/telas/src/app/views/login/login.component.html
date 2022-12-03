@@ -9,11 +9,6 @@
   </head>
   <body class="bg">
     <body>
-      <script type="text/javascript">
-        function redirectioneSenHistorico() {
-          window.location.replace("http://www/google.com.br");
-        }
-      </script>
       <style>
         ul {
           list-style: none;
@@ -27,15 +22,13 @@
         </ul>
         <hr />
         <h1>LOGIN</h1>
-        <form>
-          <input id="cpf" type="text" placeholder="CPF" />
-          <pre></pre>
-          <input id="senha" type="password" placeholder="********" />
-          <pre></pre>
-          <button id="entrar" onclick="redirectioneSenHistorico();">ENTRAR</button>
-        </form>
-        <h4 id="ou">ou</h4>
-        <a id="criar" href="">Crie sua conta</a>
+        <input id="cpf" type="text" matInput="cpf" [(ngModel)]="cpf" placeholder="CPF" />
+        <pre></pre>
+        <input id="senha" type="password" matInput="senha" [(ngModel)]="senha" placeholder="********"/>
+        <pre></pre>
+        <button id="entrar" mat-button (click)="connectionLogin()">
+          ENTRAR
+        </button>
       </div>
     </body>
   </body>

@@ -1,22 +1,48 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/model/usuario';
+import { Router } from '@angular/router';
 
-
+//'src/app/model/medico/medico';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  constructor(private HttpClient: HttpClient) { }
 
-  connectionLogin(){
-    return this.HttpClient.get<Usuario>('http://localhost:7000/login')
-    .pipe(
-      (res) => res,
-      (err) => err
-    );
+  cpf=''
+  senha=''
+
+ constructor(
+  private HttpClient: HttpClient,
+  private rota: Router
+  ) { }
+  
+ 
+ connectionLogin(){
+    return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:8000/logar',
+    {cpf: this.cpf, senha: this.senha})
+    .subscribe(
+      (res) => {
+        if(res.erro){
+          console.log(res.mensagem)
+        }
+        else{
+          if(res.mensagem.search(/Funcionário/)!=-1){
+            this.rota.navigate(['telainicialfunc'])
+          }else if(res.mensagem.search(/Médico/)!=-1){
+            this.rota.navigate(['telainicialmed'])
+          }else if(res.mensagem.search(/Administrador/)!=-1){
+            this.rota.navigate(['telainicialadm']);
+          }
+        }
+      }
+    )
+    
   }
+
+  ngOnInit(): void {
+  }
+
 }
