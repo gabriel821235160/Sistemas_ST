@@ -13,16 +13,15 @@
 
         <hr id="linha1" />
         <hr id="linha2" />
-        <button mat-button id="sair">Sair</button>
+        <button mat-button id="sair" (click)="connectionLogout()" >Sair</button>
       </mat-drawer-container>
   <h1 id="titulo">Prontuário Eletrônico </h1>
   <mat-drawer-container id="card2">
     <hr id="linha3">
     <input id="cpf" type="text" matInput="cpf" [(ngModel)]="cpf" placeholder="CPF">
-    <input id="sexo" type="text" matInput="sexo" [(ngModel)]="sexo" placeholder="Gênero">
+    <input id="sexo" type="text" matInput="genero" [(ngModel)]="genero" placeholder="Gênero">
     <input id="altura" type="text" matInput="altura" [(ngModel)]="altura" placeholder="Altura">
     <input id="peso" type="text" matInput="peso" [(ngModel)]="peso" placeholder="Peso">
-    <input id="anamnese" type="text" matInput="anamnese" [(ngModel)]="anamnese" placeholder="Anamnese">
     <input id="hipotese" type="text" matInput="hip_diagnostico" [(ngModel)]="hip_diagnostico" placeholder="Hipotese Diagnóstica">
     <input id="prescricao" type="text" matInput="prescricao" [(ngModel)]="prescricao" placeholder="Prescricao">
     <meta> <button mat-button id="salvar" (click)="connectionCadastroprontuario()">Salvar Prontuário</button>

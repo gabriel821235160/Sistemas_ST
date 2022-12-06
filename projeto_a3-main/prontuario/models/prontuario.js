@@ -12,7 +12,7 @@ const Prontuario = conexao.define("tb_prontuario", {
   dt_nascimento: {
     type: Sequelize.STRING,
   },
-  sexo: {
+  genero: {
     type: Sequelize.STRING,
   },
   altura: {
@@ -20,9 +20,6 @@ const Prontuario = conexao.define("tb_prontuario", {
   },
   peso: {
     type: Sequelize.BIGINT,
-  },
-  anamnese: {
-    type: Sequelize.TEXT('long'),
   },
   hip_diagnostico: {
     type: Sequelize.TEXT('long'),

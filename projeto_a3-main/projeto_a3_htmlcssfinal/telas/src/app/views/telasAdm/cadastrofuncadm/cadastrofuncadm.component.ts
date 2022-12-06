@@ -55,7 +55,14 @@ export class CadastrofuncadmComponent implements OnInit {
     this.rota.navigate(['cadastropacadm'])
   }
 
-
+  connectionLogout(){
+    return this.HttpClient.get<{error:false, mensagem:''}>('http://localhost:8000/logout',)
+    .subscribe(
+      (res) => {
+          this.rota.navigate(['login']);
+      }
+    )
+  }
 
 
   ngOnInit(): void {

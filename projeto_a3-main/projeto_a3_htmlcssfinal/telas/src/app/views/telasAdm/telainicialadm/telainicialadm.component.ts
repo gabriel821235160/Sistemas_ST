@@ -14,6 +14,15 @@ export class TelainicialadmComponent implements OnInit {
     private rota: Router
   ) { }
 
+  connectionLogout(){
+    return this.HttpClient.get<{error:false, mensagem:''}>('http://localhost:8000/logout',)
+    .subscribe(
+      (res) => {
+          this.rota.navigate(['login']);
+      }
+    )
+  }
+
   connectionListagem(){
     this.rota.navigate(['listagemadm']);
   }

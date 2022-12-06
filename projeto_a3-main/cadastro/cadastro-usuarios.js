@@ -7,8 +7,8 @@ const app = express()
 
 const session = require('express-session')
 //const mysql = require('mysql2')
-//const bcrypt = require('bcrypt')
-//const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 
 //const Usuario = require('../prontuario/models/usuario')
@@ -17,6 +17,7 @@ const Paciente = require('././models/paciente')
 const Medico = require('././models/medico')
 const Funcionario = require('././models/funcionario')
 const Administrador = require('././models/admin')
+const { verificaJWT } = require('./middleware/auth')
 
 
 app.use(express.json())
@@ -27,9 +28,24 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Credentials", true);
     app.use(cors());
     next();
-  });
+});
 
 //fazer com que um adm seja criado assim que rodar o servidor
+
+
+app.get("/", verificaJWT, (req, res) => {
+    console.log("_______________________")
+    var oi = req.headers['token']
+    console.log(oi)
+    console.log("OIII")
+    return res.json({
+        erro: false,
+        mensagem: "Teste!"
+    })
+    
+})
+
+
 
 
 // ------CADASTRAR paciente------ FUNCIONANDO!!
@@ -37,8 +53,7 @@ app.post("/cadastro-paciente", async (req, res) => {
 
     const dados = req.body
 
-    //responsável por encriptar a senha:
-    //dados.senha = await bcrypt.hash(dados.senha, 7)
+    //Paciente não tem senha, afinal, não é um login, apenas um cadastro
 
     await Paciente.create(dados)
         .then(() => {
@@ -61,7 +76,7 @@ app.post("/cadastro-medico", async (req, res) => {
     const dados = req.body
 
     //responsável por encriptar a senha:
-    //dados.senha = await bcrypt.hash(dados.senha, 7)
+    dados.senha = await bcrypt.hash(dados.senha, 7)
 
 
     await Medico.create(dados)
@@ -86,7 +101,7 @@ app.post("/cadastro-funcionario", async (req, res) => {
     const dados = req.body
 
     //responsável por encriptar a senha:
-    //dados.senha = await bcrypt.hash(dados.senha, 7)
+    dados.senha = await bcrypt.hash(dados.senha, 7)
 
     await Funcionario.create(dados)
         .then(() => {
@@ -104,28 +119,7 @@ app.post("/cadastro-funcionario", async (req, res) => {
 })
 
 
-// ------CADASTRAR paciente------ 
-app.post("/cadastro-paciente", async (req, res) => {
 
-    const dados = req.body
-
-    //responsável por encriptar a senha:
-    //dados.senha = await bcrypt.hash(dados.senha, 7)
-
-    await Paciente.create(dados)
-        .then(() => {
-            return res.json({
-                erro: false,
-                senha: dados.senha,
-                mensagem: "Paciente cadastrado!"
-            })
-        }).catch(() => {
-            return res.status(400).json({
-                erro: true,
-                mensagem: "Paciente não cadastrado!"
-            })
-        })
-})
 
 
 
@@ -161,11 +155,11 @@ app.post("/logar", async (req, res) => {
 
     if (usuario_administrador != null) {
         var usuario = usuario_administrador
-    } else if (usuario_medico != null){
+    } else if (usuario_medico != null) {
         var usuario = usuario_medico
-    }else if (usuario_funcionario != null){
+    } else if (usuario_funcionario != null) {
         var usuario = usuario_funcionario
-    }else {
+    } else {
         return res.status(400).json({
             erro: true,
             mensagem: "CPF ou senha incorretos! (usuário não encontrado)"
@@ -174,17 +168,39 @@ app.post("/logar", async (req, res) => {
 
     console.log(usuario.nome)
     console.log(usuario.tipo_acesso)
+    console.log(usuario.senha)
 
 
-
-
-
+    /*
     if (!(req.body.senha === usuario.senha)) {
         return res.status(400).json({
             erro: true,
             mensagem: "Usuário ou senha incorretos! (Senha incorreta)"
         })
     }
+    */
+
+
+    //Comparação da senha informada com a senha no banco de dados(utilizando o bcrypt)
+    if (!(bcrypt.compare(req.body.senha, usuario.senha))) {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Usuário ou senha incorretos! (Senha incorreta)"
+        })
+    } else {
+        const token = jwt.sign({ id: usuario.cpf }, process.env.SECRET, {
+            expiresIn: 600 //10 minutos
+        })
+        return res.status(200).json({
+            erro: false,
+            mensagem: `Login realizado! - ${usuario.tipo_acesso}`,
+            auth: true,
+            token
+        })
+    }
+
+
+
 
     //é uma "var" porque o valor pode ser alterado
     //deve ser informado a primary key, o valor está como 1 pois no momento não tem nenhum outro
@@ -201,13 +217,26 @@ app.post("/logar", async (req, res) => {
     }
     */
 
+    /*
     return res.json({
         erro: false,
         acesso: `${usuario.tipo_acesso}`,
         mensagem: `Login realizado! - ${usuario.tipo_acesso}`
     })
-
+    */
 })
+
+
+//// ------LOGOUT de usuário------ 
+app.get("/logout", (req, res, error) => {
+    console.log('deslogado')
+    res.end();
+});
+
+
+
+
+
 
 //Busca o paciente pelo cpf informado na hora da atualização do pronturário
 app.get("/paciente", async (req, res) => {
@@ -230,7 +259,7 @@ app.get("/paciente", async (req, res) => {
         return res.status(404).json({
             mensagem: "Paciente não encontrado!"
         })
-    } 
+    }
 })
 
 amqp.connect(`amqp://localhost`, (err, connection) => {
@@ -249,8 +278,8 @@ amqp.connect(`amqp://localhost`, (err, connection) => {
             console.log(`Recieved : ${msg.content.toString()}`);
             const prontuario = JSON.parse(msg.content.toString())
             console.log(prontuario)
-            await Paciente.update({peso: prontuario.peso, sexo: prontuario.sexo, altura: prontuario.altura, anamnese: prontuario.anamnese, hip_diagnostico: prontuario.hip_diagnostico, prescricao: prontuario.prescricao}, {
-                where:{
+            await Paciente.update({ peso: prontuario.peso, genero: prontuario.genero, altura: prontuario.altura, hip_diagnostico: prontuario.hip_diagnostico, prescricao: prontuario.prescricao }, {
+                where: {
                     cpf: prontuario.cpf
                 }
             })

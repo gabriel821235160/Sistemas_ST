@@ -18,6 +18,14 @@ export class TelainicialmedComponent implements OnInit {
     this.rota.navigate(['prontuariomed']);
   }
 
+  connectionLogout(){
+    return this.HttpClient.get<{error:false, mensagem:''}>('http://localhost:8000/logout',)
+    .subscribe(
+      (res) => {
+          this.rota.navigate(['login']);
+      }
+    )
+  }
 
   ngOnInit(): void {
   }

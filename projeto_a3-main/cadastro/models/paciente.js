@@ -28,7 +28,7 @@ const Paciente = conexao.define("tb_pacientes", {
   cep: {
     type: Sequelize.BIGINT,
   },
-  sexo: {
+  genero: {
     type: Sequelize.STRING,
   },
   altura: {
@@ -36,9 +36,6 @@ const Paciente = conexao.define("tb_pacientes", {
   },
   peso: {
     type: Sequelize.STRING,
-  },
-  anamnese: {
-    type: Sequelize.TEXT("long"),
   },
   hip_diagnostico: {
     type: Sequelize.TEXT("long"),

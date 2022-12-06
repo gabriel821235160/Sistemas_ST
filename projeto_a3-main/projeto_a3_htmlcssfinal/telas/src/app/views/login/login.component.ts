@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, map } from 'rxjs';
 
 //'src/app/model/medico/medico';
 @Component({
@@ -39,7 +40,6 @@ export class LoginComponent implements OnInit {
         }
       }
     )
-    
   }
 
   ngOnInit(): void {

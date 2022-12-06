@@ -11,11 +11,10 @@ export class ProntuariomedComponent implements OnInit {
 
   cpf=''
   dt_nascimento=''
-  sexo=''
+  genero=''
   altura=''
   peso=''
 
-  anamnese=''
   hip_diagnostico=''
   prescricao=''
 
@@ -26,8 +25,8 @@ export class ProntuariomedComponent implements OnInit {
 
   connectionCadastroprontuario(){
     return this.HttpClient.post<{erro:false, mensagem:''}>('http://localhost:9000/criar-prontuario',
-    {cpf: this.cpf, dt_nascimento:this.dt_nascimento, sexo:this.sexo, altura:this.altura, peso:this.peso, 
-      anamnese:this.anamnese, hip_diagnostico:this.hip_diagnostico, prescricao:this.prescricao})
+    {cpf: this.cpf, dt_nascimento:this.dt_nascimento, genero:this.genero, altura:this.altura, peso:this.peso, 
+      hip_diagnostico:this.hip_diagnostico, prescricao:this.prescricao})
       .subscribe(
         (res) => {
           if(res.erro){
@@ -50,9 +49,14 @@ export class ProntuariomedComponent implements OnInit {
     this.rota.navigate(['prontuarioadm']);
   }
 
-
-
-
+  connectionLogout(){
+    return this.HttpClient.get<{error:false, mensagem:''}>('http://localhost:8000/logout',)
+    .subscribe(
+      (res) => {
+          this.rota.navigate(['login']);
+      }
+    )
+  }
 
   ngOnInit(): void {
   }

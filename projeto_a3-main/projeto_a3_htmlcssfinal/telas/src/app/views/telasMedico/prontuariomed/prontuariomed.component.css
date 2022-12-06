@@ -196,22 +196,6 @@
     border-radius: 30px;
 }
 
-
-#anamnese{
-    font-family: minhafonte;
-    text-align: left;
-    background-color: #E7E7E7;
-    border-radius: 10px;
-    border-color: #004E64;
-    color: black;
-    font-size: 110%;
-    position: absolute;
-    left: 3%;
-    top:29% ;
-    width: 93%;
-    height: 20%;
-  }
-
 #hipotese{
     font-family: minhafonte;
     text-align: left;
@@ -222,7 +206,7 @@
     font-size: 110%;
     position:absolute;
     left: 3%;
-    top:56% ;
+    top:28% ;
     width: 93%;
     height: 20%;
   }
@@ -237,7 +221,7 @@
     font-size: 110%;
     position:absolute;
     left: 3%;
-    top:83% ;
+    top:54% ;
     width: 93%;
     height: 20%;
   }
